@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import { Routes } from "@/constants/router";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +24,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable,
+        )}
+      >
+        <Link
+          href={Routes.HOME}
+          className="w-full flex items-center justify-center py-8"
+        >
+          <Image
+            src="/logo.png"
+            alt="Welcome to prne.me - Your Ultimate URL Shortening Solution!"
+            title="Welcome to prne.me - Your Ultimate URL Shortening Solution!"
+            width={200}
+            height={50}
+          />
+        </Link>
+        <main>{children}</main>
+      </body>
     </html>
   );
 }

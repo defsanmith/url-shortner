@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Url {
+  id          String        @id @default(cuid())
+  url         String
+  slug        String        @unique
+  hits        Int           @default(0)
+  updatedAt   DateTime      @updatedAt
+  createdAt   DateTime      @default(now())
+  RedirectLog RedirectLog[]
+
+  @@map("urls")
+}
+
+model RedirectLog {
+  id        String   @id @default(cuid())
+  referer   String?
+  userAgent String?  @map("user_agent")
+  ip        String?
+  createdAt DateTime @default(now())
+  url       Url      @relation(fields: [urlId], references: [id])
+  urlId     String
+
+  @@map("redirect_logs")
+}
