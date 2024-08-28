@@ -2,7 +2,7 @@ export const features = [
   {
     title: "Easy to Use",
     description:
-      "With prne.me, shortening your URLs is a breeze. Simply paste your long link into our shortening tool and get a custom, compact URL in seconds.",
+      "With URL Shortner, shortening your URLs is a breeze. Simply paste your long link into our shortening tool and get a custom, compact URL in seconds.",
   },
   // {
   //   title: "Enhanced Tracking",
@@ -28,7 +28,8 @@ export const howItWorks = [
   },
   {
     title: "Shorten",
-    description: "Click the 'Shorten' button to generate a custom prne.me URL.",
+    description:
+      "Click the 'Shorten' button to generate a custom URL Shortner URL.",
   },
   {
     title: "Share",

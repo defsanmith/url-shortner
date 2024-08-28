@@ -16,7 +16,7 @@ export default function Home() {
       <div className="bg-primary-foreground">
         <div className="py-8 flex flex-col gap-8 container">
           <h2 className="text-center text-2xl font-bold">
-            Why Choose prne.me?
+            Why Choose URL Shortner?
           </h2>
           <ol className="flex flex-col md:grid md:grid-flow-row md:grid-cols-2 gap-8">
             {features.map((feature) => (

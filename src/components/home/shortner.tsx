@@ -39,7 +39,7 @@ export function ShortnerInput() {
   }
 
   return (
-    <div className="w-full md:w-1/2 py-8 md:py-24">
+    <div className="w-full md:w-1/2 py-8 md:pb-24 md:pt-12">
       <p className="text-center text-xl pb-8">
         Simplify Your Links, Amplify Your Reach
       </p>

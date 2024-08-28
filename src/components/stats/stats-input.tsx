@@ -44,7 +44,7 @@ export function StatsInput() {
   return (
     <div className="w-full md:w-1/2 py-8 md:py-24">
       <p className="text-center text-xl pb-8">
-        Get Statistic for your prne.me URL
+        Get Statistic for your URL Shortner URL
       </p>
       <Form {...form}>
         <form
@@ -58,7 +58,7 @@ export function StatsInput() {
               <FormItem className="flex-1">
                 <FormControl>
                   <Input
-                    placeholder="Enter your prne.me URL to get statistics"
+                    placeholder="Enter your URL Shortner URL to get statistics"
                     {...field}
                   />
                 </FormControl>
